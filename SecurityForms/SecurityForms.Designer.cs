@@ -205,7 +205,7 @@
             this.Controls.Add(this.DecBTN);
             this.Controls.Add(this.EncBTN);
             this.Name = "SecurityForms";
-            this.Text = "Security Forms";
+            this.Text = "Enigma  Turing";
             this.ResumeLayout(false);
             this.PerformLayout();
 
