@@ -8,7 +8,7 @@ namespace SecurityForms.Classes
 {
     class RailFenceClass
     {
-        public  string Encrypt(string plaintext, string key)
+        public string Encrypt(string plaintext, string key)
         {
             string ciphertext = null;
             int j = 0, k = 0;

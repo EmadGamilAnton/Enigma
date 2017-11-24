@@ -12,14 +12,17 @@ namespace SecurityForms
 {
     public partial class SecurityForms : MetroFramework.Forms.MetroForm
     {
-        Classes.CeaserCipherClass ccObj = new Classes.CeaserCipherClass();
+        Classes.CeaserCipherClass ccObj   = new Classes.CeaserCipherClass();
         Classes.MonoalphabeticClass maobj = new Classes.MonoalphabeticClass();
-        Classes.RailFenceClass rfobj = new Classes.RailFenceClass();
-        Classes.PlayFairClass pfobj = new Classes.PlayFairClass();
+        Classes.RailFenceClass rfobj      = new Classes.RailFenceClass();
+        Classes.PlayFairClass pfobj       = new Classes.PlayFairClass();
         Classes.PolyalphabeticClass paobj = new Classes.PolyalphabeticClass();
+        Classes.DesCipherClass tdesobj    = new Classes.DesCipherClass();
+        Classes.DesCipherClass desobj     = new Classes.DesCipherClass();
         public SecurityForms()
         {
             InitializeComponent();
+            notificationTXT.Text = Notifiations();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -40,16 +43,17 @@ namespace SecurityForms
             if (comboBoxChooseType.SelectedIndex == 2)
             {
                 EncryptionMessageTXT.Text = pfobj.Encipher(MessageTXT.Text.ToString(), keyTXT.Text);
-                
             }
             if (comboBoxChooseType.SelectedIndex == 3)
             {
                 EncryptionMessageTXT.Text = paobj.Encipher(MessageTXT.Text.ToString(), keyTXT.Text);
-
             }
-            if (comboBoxChooseType.SelectedIndex == 4)
+            if (comboBoxChooseType.SelectedIndex == 5)
             {
-               EncryptionMessageTXT.Text= rfobj.Encrypt(MessageTXT.Text, keyTXT.Text);
+                EncryptionMessageTXT.Text = tdesobj.TEncrypt(MessageTXT.Text, keyTXT.Text);
+            }
+            if (comboBoxChooseType.SelectedIndex == 6)
+            {
             }
 
         }
@@ -67,17 +71,21 @@ namespace SecurityForms
             if (comboBoxChooseType.SelectedIndex == 2)
             {
                 DecryptionMessageTXT.Text = pfobj.Decipher(EncryptionMessageTXT.Text.ToString(), keyTXT.Text);
-
             }
             if (comboBoxChooseType.SelectedIndex == 3)
             {
                 DecryptionMessageTXT.Text = paobj.Decipher(EncryptionMessageTXT.Text.ToString(), keyTXT.Text);
-
             }
             if (comboBoxChooseType.SelectedIndex == 4)
             {
                 DecryptionMessageTXT.Text = rfobj.Decrypt(EncryptionMessageTXT.Text, keyTXT.Text);
-
+            }
+            if (comboBoxChooseType.SelectedIndex == 5)
+            {
+                DecryptionMessageTXT.Text = tdesobj.TDecrypt(EncryptionMessageTXT.Text, keyTXT.Text);
+            }
+            if (comboBoxChooseType.SelectedIndex == 6)
+            {
             }
 
         }
@@ -92,6 +100,15 @@ namespace SecurityForms
             {
                 keyTXT.UseSystemPasswordChar=false;
             }
+        }
+        public string Notifiations()
+        {
+            string msg = " 1- Please Choose Encryption Type \r\n"+
+                         " 2- Enter Your Message \r\n"+
+                         " 3- Enter Your Key \r\n"+
+                         " 4- Click Encrypt first then decrypt button \r\n";
+            notificationTXT.ForeColor = Color.Blue;
+            return msg;
         }
     }
 }

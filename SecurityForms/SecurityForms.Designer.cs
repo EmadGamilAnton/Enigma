@@ -42,14 +42,17 @@
             this.keyTXT = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.notificationTXT = new System.Windows.Forms.TextBox();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // EncBTN
             // 
             this.EncBTN.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.EncBTN.Location = new System.Drawing.Point(449, 396);
+            this.EncBTN.Location = new System.Drawing.Point(482, 448);
             this.EncBTN.Name = "EncBTN";
-            this.EncBTN.Size = new System.Drawing.Size(99, 31);
+            this.EncBTN.Size = new System.Drawing.Size(136, 40);
             this.EncBTN.TabIndex = 0;
             this.EncBTN.Text = "Encryption";
             this.EncBTN.UseVisualStyleBackColor = true;
@@ -58,9 +61,9 @@
             // DecBTN
             // 
             this.DecBTN.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.DecBTN.Location = new System.Drawing.Point(566, 396);
+            this.DecBTN.Location = new System.Drawing.Point(624, 448);
             this.DecBTN.Name = "DecBTN";
-            this.DecBTN.Size = new System.Drawing.Size(98, 31);
+            this.DecBTN.Size = new System.Drawing.Size(122, 40);
             this.DecBTN.TabIndex = 1;
             this.DecBTN.Text = "Decryption";
             this.DecBTN.UseVisualStyleBackColor = true;
@@ -71,12 +74,14 @@
             this.comboBoxChooseType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxChooseType.FormattingEnabled = true;
             this.comboBoxChooseType.Items.AddRange(new object[] {
-            "Caeser Cipher",
-            "Monoalphabetic Cipher",
-            "Playfair Cipher",
-            "Polyalphabetic Cipher",
-            "Rail Fence"});
-            this.comboBoxChooseType.Location = new System.Drawing.Point(200, 102);
+            "1 - Caeser Cipher",
+            "2 - Monoalphabetic Cipher",
+            "3 - Playfair Cipher",
+            "4 - Polyalphabetic Cipher",
+            "5 - Rail Fence",
+            "6 - T Des Cipher",
+            "7 - Simple Des"});
+            this.comboBoxChooseType.Location = new System.Drawing.Point(228, 102);
             this.comboBoxChooseType.Name = "comboBoxChooseType";
             this.comboBoxChooseType.Size = new System.Drawing.Size(244, 24);
             this.comboBoxChooseType.TabIndex = 2;
@@ -86,15 +91,15 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(9, 105);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(185, 17);
+            this.label1.Size = new System.Drawing.Size(202, 17);
             this.label1.TabIndex = 3;
-            this.label1.Text = "Choose Your Security Type :";
+            this.label1.Text = "Choose Your Encryption Type :";
             // 
             // exitBTN
             // 
-            this.exitBTN.Location = new System.Drawing.Point(685, 396);
+            this.exitBTN.Location = new System.Drawing.Point(752, 448);
             this.exitBTN.Name = "exitBTN";
-            this.exitBTN.Size = new System.Drawing.Size(75, 31);
+            this.exitBTN.Size = new System.Drawing.Size(113, 40);
             this.exitBTN.TabIndex = 4;
             this.exitBTN.Text = "Exit";
             this.exitBTN.UseVisualStyleBackColor = true;
@@ -113,7 +118,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.label3.Location = new System.Drawing.Point(9, 221);
+            this.label3.Location = new System.Drawing.Point(11, 252);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(136, 17);
             this.label3.TabIndex = 6;
@@ -121,35 +126,35 @@
             // 
             // MessageTXT
             // 
-            this.MessageTXT.Location = new System.Drawing.Point(200, 150);
+            this.MessageTXT.Location = new System.Drawing.Point(228, 150);
             this.MessageTXT.Multiline = true;
             this.MessageTXT.Name = "MessageTXT";
-            this.MessageTXT.Size = new System.Drawing.Size(244, 52);
+            this.MessageTXT.Size = new System.Drawing.Size(244, 74);
             this.MessageTXT.TabIndex = 7;
             // 
             // EncryptionMessageTXT
             // 
-            this.EncryptionMessageTXT.Location = new System.Drawing.Point(200, 218);
+            this.EncryptionMessageTXT.Location = new System.Drawing.Point(228, 249);
             this.EncryptionMessageTXT.Multiline = true;
             this.EncryptionMessageTXT.Name = "EncryptionMessageTXT";
             this.EncryptionMessageTXT.ReadOnly = true;
-            this.EncryptionMessageTXT.Size = new System.Drawing.Size(244, 52);
+            this.EncryptionMessageTXT.Size = new System.Drawing.Size(244, 80);
             this.EncryptionMessageTXT.TabIndex = 8;
             // 
             // DecryptionMessageTXT
             // 
-            this.DecryptionMessageTXT.Location = new System.Drawing.Point(199, 309);
+            this.DecryptionMessageTXT.Location = new System.Drawing.Point(228, 342);
             this.DecryptionMessageTXT.Multiline = true;
             this.DecryptionMessageTXT.Name = "DecryptionMessageTXT";
             this.DecryptionMessageTXT.ReadOnly = true;
-            this.DecryptionMessageTXT.Size = new System.Drawing.Size(244, 52);
+            this.DecryptionMessageTXT.Size = new System.Drawing.Size(244, 78);
             this.DecryptionMessageTXT.TabIndex = 10;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label4.Location = new System.Drawing.Point(9, 312);
+            this.label4.Location = new System.Drawing.Point(9, 345);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(137, 17);
             this.label4.TabIndex = 9;
@@ -157,18 +162,18 @@
             // 
             // keyTXT
             // 
-            this.keyTXT.Location = new System.Drawing.Point(499, 105);
+            this.keyTXT.Location = new System.Drawing.Point(491, 105);
             this.keyTXT.Multiline = true;
             this.keyTXT.Name = "keyTXT";
             this.keyTXT.PasswordChar = '*';
-            this.keyTXT.Size = new System.Drawing.Size(261, 75);
+            this.keyTXT.Size = new System.Drawing.Size(377, 75);
             this.keyTXT.TabIndex = 11;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.ForeColor = System.Drawing.Color.Maroon;
-            this.label5.Location = new System.Drawing.Point(452, 105);
+            this.label5.Location = new System.Drawing.Point(488, 76);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(40, 17);
             this.label5.TabIndex = 12;
@@ -177,7 +182,7 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(499, 186);
+            this.checkBox1.Location = new System.Drawing.Point(491, 186);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(90, 21);
             this.checkBox1.TabIndex = 13;
@@ -185,11 +190,35 @@
             this.checkBox1.UseVisualStyleBackColor = true;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.notificationTXT);
+            this.groupBox1.Location = new System.Drawing.Point(491, 229);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(377, 191);
+            this.groupBox1.TabIndex = 14;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Notifications";
+            // 
+            // notificationTXT
+            // 
+            this.notificationTXT.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.notificationTXT.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.notificationTXT.Font = new System.Drawing.Font("Adobe Fan Heiti Std B", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.notificationTXT.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.notificationTXT.Location = new System.Drawing.Point(3, 20);
+            this.notificationTXT.Multiline = true;
+            this.notificationTXT.Name = "notificationTXT";
+            this.notificationTXT.ReadOnly = true;
+            this.notificationTXT.Size = new System.Drawing.Size(371, 168);
+            this.notificationTXT.TabIndex = 15;
+            // 
             // SecurityForms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(774, 448);
+            this.ClientSize = new System.Drawing.Size(891, 502);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.keyTXT);
@@ -206,6 +235,8 @@
             this.Controls.Add(this.EncBTN);
             this.Name = "SecurityForms";
             this.Text = "Enigma  Turing";
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -227,6 +258,8 @@
         private System.Windows.Forms.TextBox keyTXT;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.TextBox notificationTXT;
     }
 }
 

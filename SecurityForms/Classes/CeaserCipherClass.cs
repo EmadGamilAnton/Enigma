@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MetroFramework.Forms;
-using System.Windows.Forms;
-
-namespace SecurityForms.Classes
+﻿namespace SecurityForms.Classes
 {
     class CeaserCipherClass
     {
@@ -14,29 +6,23 @@ namespace SecurityForms.Classes
         {
             if (!char.IsLetter(ch))
             {
-
-                return ch;
+               return ch;
             }
-
-            char d = char.IsUpper(ch) ? 'A' : 'a';
+            char d = char.IsUpper(ch) ? 'A' : 'a'; //keep shape of letters
             return (char)((((ch + key) - d) % 26) + d);
-
-
         }
-        public string Encipher(string input, int key)
+        public string Encipher(string input, int key)  //encryption method call cipher method
         {
             string output = string.Empty;
 
             foreach (char ch in input)
                 output += cipher(ch, key);
-
             return output;
         }
 
-        public string Decipher(string input, int key)
+        public string Decipher(string input, int key) //decryption method call encipher method
         {
             return Encipher(input, 26 - key);
         }
-
     }
 }
