@@ -8,11 +8,11 @@ namespace SecurityForms.Classes
 {
     class PlayFairClass
     {
-        public   int Mod(int a, int b)
+        public int Mod(int a, int b)
         {
             return (a % b + b) % b;
         }
-        public   List<int> FindAllOccurrences(string str, char value)
+        public List<int> FindAllOccurrences(string str, char value)
         {
             List<int> indexes = new List<int>();
 
@@ -23,7 +23,7 @@ namespace SecurityForms.Classes
             return indexes;
         }
 
-        public   string RemoveAllDuplicates(string str, List<int> indexes)
+        public string RemoveAllDuplicates(string str, List<int> indexes)
         {
             string retVal = str;
 
@@ -55,7 +55,7 @@ namespace SecurityForms.Classes
 
             return keySquare;
         }
-        public   void GetPosition(ref char[,] keySquare, char ch, ref int row, ref int col)
+        public void GetPosition(ref char[,] keySquare, char ch, ref int row, ref int col)
         {
             if (ch == 'J')
                 GetPosition(ref keySquare, 'I', ref row, ref col);
@@ -68,26 +68,28 @@ namespace SecurityForms.Classes
                         col = j;
                     }
         }
-        public   char[] SameRow(ref char[,] keySquare, int row, int col1, int col2, int encipher)
+        public char[] SameRow(ref char[,] keySquare, int row, int col1, int col2, int encipher)
         {
-            return new char[] { keySquare[row, Mod((col1 + encipher), 5)], keySquare[row, Mod((col2 + encipher), 5)] };
+            return new char[] {
+                keySquare[row, Mod((col1 + encipher), 5)], keySquare[row, Mod((col2 + encipher), 5)]
+            };
         }
-        public   char[] SameColumn(ref char[,] keySquare, int col, int row1, int row2, int encipher)
+        public char[] SameColumn(ref char[,] keySquare, int col, int row1, int row2, int encipher)
         {
             return new char[] { keySquare[Mod((row1 + encipher), 5), col], keySquare[Mod((row2 + encipher), 5), col] };
         }
 
-        public   char[] SameRowColumn(ref char[,] keySquare, int row, int col, int encipher)
+        public char[] SameRowColumn(ref char[,] keySquare, int row, int col, int encipher)
         {
             return new char[] { keySquare[Mod((row + encipher), 5), Mod((col + encipher), 5)], keySquare[Mod((row + encipher), 5), Mod((col + encipher), 5)] };
         }
 
-        public   char[] DifferentRowColumn(ref char[,] keySquare, int row1, int col1, int row2, int col2)
+        public char[] DifferentRowColumn(ref char[,] keySquare, int row1, int col1, int row2, int col2)
         {
             return new char[] { keySquare[row1, col2], keySquare[row2, col1] };
         }
 
-        public   string RemoveOtherChars(string input)
+        public string RemoveOtherChars(string input)
         {
             string output = input;
 
@@ -98,7 +100,7 @@ namespace SecurityForms.Classes
             return output;
         }
 
-        public   string AdjustOutput(string input, string output)
+        public string AdjustOutput(string input, string output)
         {
             StringBuilder retVal = new StringBuilder(output);
 
@@ -114,7 +116,7 @@ namespace SecurityForms.Classes
             return retVal.ToString();
         }
 
-        public   string Cipher(string input, string key, bool encipher)
+        public string Cipher(string input, string key, bool encipher)
         {
             string retVal = string.Empty;
             char[,] keySquare = GenerateKeySquare(key);
@@ -157,12 +159,12 @@ namespace SecurityForms.Classes
             return retVal;
         }
 
-        public   string Encipher(string input, string key)
+        public string Encipher(string input, string key)
         {
             return Cipher(input, key, true);
         }
 
-        public   string Decipher(string input, string key)
+        public string Decipher(string input, string key)
         {
             return Cipher(input, key, false);
         }
