@@ -1,13 +1,16 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
-using MetroFramework.Forms;
-using System.IO;
 
 namespace SecurityForms
 {
-    public partial class SecurityForms : MetroForm
+    public partial class SecurityForms : MetroFramework.Forms.MetroForm
     {
         Classes.CeaserCipherClass ccObj   = new Classes.CeaserCipherClass();
         Classes.MonoalphabeticClass maobj = new Classes.MonoalphabeticClass();
@@ -29,27 +32,10 @@ namespace SecurityForms
 
         private void EncBTN_Click(object sender, EventArgs e)
         {
-            int result;
-            if (comboBoxChooseType.SelectedIndex == 0 && !int.TryParse(keyTXT.Text, out  result))
+            if (comboBoxChooseType.SelectedIndex == 0)
             {
-                MetroFramework.MetroMessageBox.Show(Owner, "You Must Enter Valid Key Contains NUmeric Value", "Key Not Valid", MessageBoxButtons.OK, MessageBoxIcon.Error, 100);
+               EncryptionMessageTXT.Text= ccObj.Encipher(MessageTXT.Text.ToString(),Convert.ToInt16(keyTXT.Text));
             }
-            else if(comboBoxChooseType.SelectedIndex == 0 && !string.IsNullOrEmpty(keyTXT.Text))
-            {
-                try
-                {
-                    EncryptionMessageTXT.Text = ccObj.Encipher(MessageTXT.Text.ToString(), Convert.ToInt16(keyTXT.Text));
-
-                }
-                catch
-                {
-                    MetroFramework.MetroMessageBox.Show(Owner, "You Must Enter Valid Key Contains NUmeric Value", "Key Not Valid", MessageBoxButtons.OK, MessageBoxIcon.Error, 100);
-
-                }
-            }
-
-          
-
             if (comboBoxChooseType.SelectedIndex == 1)
             {
                 EncryptionMessageTXT.Text = maobj.Encrypt(MessageTXT.Text.ToString(), keyTXT.Text);
@@ -74,26 +60,10 @@ namespace SecurityForms
 
         private void DecBTN_Click(object sender, EventArgs e)
         {
-            int result;
-            if (comboBoxChooseType.SelectedIndex == 0 && !int.TryParse(keyTXT.Text, out result))
+            if (comboBoxChooseType.SelectedIndex == 0)
             {
-                MetroFramework.MetroMessageBox.Show(Owner, "You Must Enter Valid Key Contains NUmeric Value", "Key Not Valid", MessageBoxButtons.OK, MessageBoxIcon.Error, 100);
+                DecryptionMessageTXT.Text = ccObj.Decipher(EncryptionMessageTXT.Text.ToString(), Convert.ToInt16(keyTXT.Text));
             }
-            else if (comboBoxChooseType.SelectedIndex == 0 && !string.IsNullOrEmpty(keyTXT.Text))
-            {
-                try
-                {
-                    DecryptionMessageTXT.Text = ccObj.Decipher(EncryptionMessageTXT.Text.ToString(), Convert.ToInt16(keyTXT.Text));
-
-                }
-                catch
-                {
-                    MetroFramework.MetroMessageBox.Show(Owner, "You Must Enter Valid Key Contains NUmeric Value", "Key Not Valid", MessageBoxButtons.OK, MessageBoxIcon.Error, 100);
-
-                }
-
-            } 
-                   
             if (comboBoxChooseType.SelectedIndex == 1)
             {
                 DecryptionMessageTXT.Text = maobj.Decrypt(EncryptionMessageTXT.Text.ToString(), keyTXT.Text);
@@ -133,28 +103,12 @@ namespace SecurityForms
         }
         public string Notifiations()
         {
-            string msg = " 1- Please Choose Encryption Type \r\n" +
-                         " 2- Enter Your Message \r\n" +
-                         " 3- Enter Your Key \r\n" +
+            string msg = " 1- Please Choose Encryption Type \r\n"+
+                         " 2- Enter Your Message \r\n"+
+                         " 3- Enter Your Key \r\n"+
                          " 4- Click Encrypt first then decrypt button \r\n";
             notificationTXT.ForeColor = Color.Blue;
             return msg;
-        }
-        public string NotifiationsSelectedItem()
-        {
-            notificationTXT.Text = "";
-            string msg = "You Must Enter Key First And Must Be Numeric Not String";
-            notificationTXT.Text = msg;
-            notificationTXT.ForeColor = Color.Red;
-            return msg;
-        }
-
-        private void comboBoxChooseType_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (comboBoxChooseType.SelectedIndex == 0)
-            {
-                NotifiationsSelectedItem();
-            }
         }
     }
 }

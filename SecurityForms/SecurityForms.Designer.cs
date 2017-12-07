@@ -53,7 +53,7 @@
             this.EncBTN.Location = new System.Drawing.Point(482, 448);
             this.EncBTN.Name = "EncBTN";
             this.EncBTN.Size = new System.Drawing.Size(136, 40);
-            this.EncBTN.TabIndex = 3;
+            this.EncBTN.TabIndex = 0;
             this.EncBTN.Text = "Encryption";
             this.EncBTN.UseVisualStyleBackColor = true;
             this.EncBTN.Click += new System.EventHandler(this.EncBTN_Click);
@@ -64,7 +64,7 @@
             this.DecBTN.Location = new System.Drawing.Point(624, 448);
             this.DecBTN.Name = "DecBTN";
             this.DecBTN.Size = new System.Drawing.Size(122, 40);
-            this.DecBTN.TabIndex = 4;
+            this.DecBTN.TabIndex = 1;
             this.DecBTN.Text = "Decryption";
             this.DecBTN.UseVisualStyleBackColor = true;
             this.DecBTN.Click += new System.EventHandler(this.DecBTN_Click);
@@ -84,8 +84,7 @@
             this.comboBoxChooseType.Location = new System.Drawing.Point(228, 102);
             this.comboBoxChooseType.Name = "comboBoxChooseType";
             this.comboBoxChooseType.Size = new System.Drawing.Size(244, 24);
-            this.comboBoxChooseType.TabIndex = 0;
-            this.comboBoxChooseType.SelectedIndexChanged += new System.EventHandler(this.comboBoxChooseType_SelectedIndexChanged);
+            this.comboBoxChooseType.TabIndex = 2;
             // 
             // label1
             // 
@@ -101,7 +100,7 @@
             this.exitBTN.Location = new System.Drawing.Point(752, 448);
             this.exitBTN.Name = "exitBTN";
             this.exitBTN.Size = new System.Drawing.Size(113, 40);
-            this.exitBTN.TabIndex = 5;
+            this.exitBTN.TabIndex = 4;
             this.exitBTN.Text = "Exit";
             this.exitBTN.UseVisualStyleBackColor = true;
             this.exitBTN.Click += new System.EventHandler(this.button3_Click);
@@ -131,7 +130,7 @@
             this.MessageTXT.Multiline = true;
             this.MessageTXT.Name = "MessageTXT";
             this.MessageTXT.Size = new System.Drawing.Size(244, 74);
-            this.MessageTXT.TabIndex = 1;
+            this.MessageTXT.TabIndex = 7;
             // 
             // EncryptionMessageTXT
             // 
@@ -168,7 +167,7 @@
             this.keyTXT.Name = "keyTXT";
             this.keyTXT.PasswordChar = '*';
             this.keyTXT.Size = new System.Drawing.Size(377, 75);
-            this.keyTXT.TabIndex = 2;
+            this.keyTXT.TabIndex = 11;
             // 
             // label5
             // 
