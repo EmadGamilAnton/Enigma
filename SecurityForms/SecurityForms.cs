@@ -19,6 +19,7 @@ namespace SecurityForms
         Classes.PolyalphabeticClass paobj = new Classes.PolyalphabeticClass();
         Classes.DesCipherClass tdesobj    = new Classes.DesCipherClass();
         Classes.DesCipherClass desobj     = new Classes.DesCipherClass();
+        Classes.SimpleDes simobj          = new Classes.SimpleDes();
         public SecurityForms()
         {
             InitializeComponent();
@@ -54,6 +55,16 @@ namespace SecurityForms
             }
             if (comboBoxChooseType.SelectedIndex == 6)
             {
+              // EncryptionMessageTXT.Text= tdesobj.TEncrypt(MessageTXT.Text, keyTXT.Text);
+
+                //string plain = simobj.getBlock(MessageTXT.Text).ToString();
+                //string key = simobj.getKey(keyTXT.Text).ToString();
+                //var array = plain.Select(i => Convert.ToInt32(i-48)).ToArray();
+                //var array2 = key.Select(i => Convert.ToInt32(i-48)).ToArray();
+
+                //int[] outputBits =  simobj.permute(array, array2, false) ;
+
+                //EncryptionMessageTXT.Text = outputBits.ToString();
             }
 
         }
@@ -86,6 +97,8 @@ namespace SecurityForms
             }
             if (comboBoxChooseType.SelectedIndex == 6)
             {
+               // DecryptionMessageTXT.Text = tdesobj.TDecrypt(EncryptionMessageTXT.Text, keyTXT.Text);
+
             }
 
         }

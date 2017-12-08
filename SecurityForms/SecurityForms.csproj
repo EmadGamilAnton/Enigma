@@ -88,10 +88,12 @@
   <ItemGroup>
     <Compile Include="Classes\CeaserCipherClass.cs" />
     <Compile Include="Classes\DesCipherClass.cs" />
+    <Compile Include="Classes\DesExample.cs" />
     <Compile Include="Classes\MonoalphabeticClass.cs" />
     <Compile Include="Classes\PlayFairClass.cs" />
     <Compile Include="Classes\PolyalphabeticClass.cs" />
     <Compile Include="Classes\RailFenceClass.cs" />
+    <Compile Include="Classes\SimpleDes.cs" />
     <Compile Include="SecurityForms.cs">
       <SubType>Form</SubType>
     </Compile>
